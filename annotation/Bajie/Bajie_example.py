@@ -11,13 +11,12 @@
 
 from Bajie import Bajie
 
-
 bajie = Bajie("data/test.txt");
 
 #加载分词字典
 #bajie.addkey();
 bajie.suggest(("平均","工资"));
-bajie.loaddict("./data/test.txt");
+bajie.loaddict("./dict/testdict.txt");
 
 
 #切词
@@ -45,9 +44,8 @@ print
 #排序
 bajie.sort("textrank", 500, txt=txt);                       #对过滤结果排序
 sortList = bajie.sort_list;                                 #获取排序列表
-sortList.append(("李子贤",0.78873212));                     #添加自定义项目
+sortList.append(("新增测试",0.78873212));                     #添加自定义项目
 print bajie.show(select="sort", split="\n");                #查看排序结果（不包含自定义）
-
 
 
 #云图
